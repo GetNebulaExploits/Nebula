@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula - Best Executor 2024</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d; /* Dark background */
+            color: #ffffff; /* Default text color */
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s; /* Fade in for the body */
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Sends background behind other content */
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(128, 0, 128, 0.5); /* Purple color */
+            animation: moveCircle 20s infinite linear, pulse 2s infinite; /* Added pulse animation */
+            box-shadow: 0 0 30px rgba(128, 0, 128, 0.8); /* Glow effect */
+        }
+
+        @keyframes moveCircle {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            100% {
+                transform: translateY(100vh) translateX(100vw);
+            }
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        h1 {
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease-out, bounce 1s infinite; /* Added fade and bounce animations */
+            color: #d3a3f3; /* Light purple */
+        }
+
+        p {
+            font-size: 18px;
+            animation: fadeIn 2s ease-out, slideIn 1s; /* Added fade in and slide-in animations */
+            margin: 10px 0;
+            color: #c7c7c7; /* Light grey */
+        }
+
+        .tab {
+            display: none;
+            padding: 20px;
+            background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            transition: transform 0.3s;
+        }
+
+        .tab.active {
+            display: block;
+            transform: scale(1.05); /* Slight zoom for the active tab */
+            animation: fadeIn 0.5s ease-in; /* Added fade animation for active tab */
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-out; /* Fade in for the feature list */
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 16px;
+            animation: fadeIn 1s forwards; /* Fade in for each feature */
+            transition: transform 0.2s;
+            color: #c7c7c7; /* Light grey for features */
+        }
+
+        .feature-list li:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        .feature-list li:before {
+            content: '✔️'; /* Checkmark icon */
+            margin-right: 10px;
+            font-size: 20px;
+            color: #d3a3f3; /* Light purple for checkmark */
+            animation: pulse 2s infinite; /* Added pulse animation to checkmark */
+        }
+
+        .credits {
+            padding: 20px;
+            animation: fadeIn 1.5s ease-out; /* Fade in for credits */
+        }
+
+        .credits ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits li {
+            font-size: 16px;
+            margin: 5px 0;
+            animation: fadeIn 1s forwards; /* Fade in for each credit */
+            color: #c7c7c7; /* Light grey */
+        }
+
+        .button {
+            background: linear-gradient(90deg, #800080, #4b0082); /* Purple gradient */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s; /* Added fade in animation */
+        }
+
+        .button:hover {
+            transform: scale(1.1) rotate(5deg); /* Added rotation on hover */
+            background: linear-gradient(90deg, #4b0082, #800080); /* Reverse gradient on hover */
+            box-shadow: 0 0 20px rgba(128, 0, 128, 1); /* Glow effect on hover */
+            animation: bounce 0.5s; /* Added bounce animation on hover */
+        }
+
+        .nav {
+            margin: 20px;
+            animation: fadeIn 1.5s ease-out; /* Fade in for nav */
+        }
+
+        .nav button {
+            background: none;
+            border: none;
+            color: #d3a3f3; /* Light purple for nav buttons */
+            cursor: pointer;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+            animation: fadeIn 1.5s ease-out; /* Added fade in for nav buttons */
+        }
+
+        .nav button:hover {
+            color: #4b0082; /* Darker purple on hover */
+            transform: scale(1.1) rotate(5deg); /* Added rotation on hover */
+            background-color: rgba(255, 255, 255, 0.1); /* Slight background color on hover */
+            box-shadow: 0 0 10px rgba(128, 0, 128, 1); /* Glow effect on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <!-- Create multiple circles -->
+        <div class="circle" style="width: 100px; height: 100px; top: 10%; left: 20%; animation-duration: 25s;"></div>
+        <div class="circle" style="width: 150px; height: 150px; top: 30%; left: 40%; animation-duration: 20s;"></div>
+        <div class="circle" style="width: 80px; height: 80px; top: 60%; left: 60%; animation-duration: 30s;"></div>
+        <div class="circle" style="width: 120px; height: 120px; top: 80%; left: 10%; animation-duration: 28s;"></div>
+        <div class="circle" style="width: 90px; height: 90px; top: 50%; left: 80%; animation-duration: 32s;"></div>
+        <div class="circle" style="width: 110px; height: 110px; top: 20%; left: 70%; animation-duration: 27s;"></div>
+    </div>
+
+    <div class="nav">
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('credits')">Credits</button>
+    </div>
+
+    <div id="home" class="tab active">
+        <h1>Nebula Executor</h1>
+        <p>The best executor for Roblox scripts, designed for performance and ease of use.</p>
+        <h2 style="color: #d3a3f3;">Features:</h2>
+        <ul class="feature-list">
+            <li>Fast Execution</li>
+            <li>Fast Injection</li>
+            <li>advanced ui</li>
+            <li>Level 3</li>
+            <li>80+ Unc</li>
+        </ul>
+        <button class="button" onclick="downloadExecutor()">Download Executor</button>
+    </div>
+
+    <div id="credits" class="tab">
+        <h1>Credits</h1>
+        <div class="credits">
+            <p>Special thanks to:</p>
+            <ul>
+                <li>Uni</li>
+                <li>burgstein</li>
+                <li>dior</li>
+                <li>forlornicus</li>
+            </ul>
+        </div>
+        <button class="button" onclick="joinDiscord()">Join Discord</button>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function downloadExecutor() {
+            window.location.href = 'https://github.com/GetNebulaExploits/Multi_Tool/releases/download/V1.0/Nebula.Multi.Tool.bat';
+        }
+
+        function joinDiscord() {
+            window.open('https://discord.gg/VUFgP7ExX9', '_blank');
+        }
+    </script>
+</body>
+
+</html>
